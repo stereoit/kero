@@ -1,3 +1,8 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://kero.cz"
+publishDir = "docs"
+languageCode = "cs-cz"
+title = "Kero nášivky"
+theme = "kero"
+
+[params]
+description = "Kero super nášivky"

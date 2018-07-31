@@ -1,0 +1,9 @@
+{{/* Generates a valid Algolia search index */}}
+{{- $.Scratch.Add "index" slice -}}
+{{- $section := $.Site.GetPage "section" .Section }}
+{{- range .Site.AllPages -}}
+  {{- if or (and (.IsDescendant $section) (and (not .Draft) (not .Params.private))) $section.IsHome -}}
+  {{- $.Scratch.Add "index" (dict "objectID" .UniqueID "description" .Description "keywords" .Keywords "summary" .Summary "title" .Title "url" .URL "section" .Section "tags" .Params.Tags)}}
+  {{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

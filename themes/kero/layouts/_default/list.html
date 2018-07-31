@@ -1,0 +1,22 @@
+{{ define "main" }}
+<main>
+  {{ partial "breadcrumb.html" . }}
+  <div class="content__heading">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}{{ . }}{{end}}
+  </div>
+  {{ partial "toc.html" . }}
+  <div class="content">
+    {{ .Content }}
+
+    <ul class="list--unstyled">
+    <!-- Ranges through content/post/*.md -->
+    {{ range .Data.Pages }}
+        <li>
+            <a href="{{.Permalink}}">{{.Title}}</a>
+        </li>
+    {{ end }}
+    </ul>
+  </div>
+</main>
+{{ end }}

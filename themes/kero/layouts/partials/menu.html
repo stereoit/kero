@@ -1,0 +1,22 @@
+{{ $currentPage := . }}
+<nav role="navigation" id="global-nav">
+  <h3>Menu</h3>
+  <ul class="list--unstyled">
+    {{ range .Site.Menus.main.ByWeight }}
+      <li>
+        <a href="{{ if .HasChildren }}javascript:void(0){{ else }}{{ .URL }}{{ end }}" class="js-toggle-menu {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} selected{{end}}" data-target=".{{ .Name | urlize }}">{{ .Name }}</a>
+          {{ if .HasChildren }}
+            <ul class="list--unstyled {{ .Name | urlize }} desktopmenu animated fadeIn {{if $currentPage.HasMenuCurrent "main" . }} db{{ else }} dn{{ end }}">
+              {{ range .Children }}
+                <li  class="child">
+                  <a href="{{.URL}}" class="{{if $currentPage.IsMenuCurrent "main" . }}selected{{end}}">
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{end}}
+        </li>
+    {{end}}
+  </ul>
+</nav>

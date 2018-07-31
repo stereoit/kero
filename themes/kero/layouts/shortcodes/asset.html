@@ -1,0 +1,20 @@
+{{ $grey := .Page.Resources.GetMatch (printf "%s-grey.png" (.Get 0)) }}
+{{ $greysvg := .Page.Resources.GetMatch (printf "%s-grey.svg" (.Get 0)) }}
+{{ $black := .Page.Resources.GetMatch (printf "%s-black.svg" (.Get 0)) }}
+{{ $blacksvg := .Page.Resources.GetMatch (printf "%s-black.svg" (.Get 0)) }}
+{{ $title := (.Get 1) }}
+
+<div class="asset">
+  <h2>{{ $title }}</h2>
+  {{ template "asset" (dict "link" $grey.RelPermalink "linksvg" $greysvg.RelPermalink "title" $title) }}
+  {{ with $black }}
+    {{ template "asset" (dict "link" $black.RelPermalink "linksvg" $blacksvg.RelPermalink "title" $title) }}
+  {{ end }}
+</div>
+
+{{ define "asset" }}
+<div>
+  <img src="{{ .link }}" alt="{{ .title }}">
+  <a href="{{ .linksvg }}">Download as SVG</a>
+</div>
+{{ end }}

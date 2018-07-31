@@ -1,0 +1,13 @@
+{{ $original := .Page.Resources.GetMatch (printf "%s*" (.Get 0)) }}
+{{ $options := .Get 1 }}
+{{ $style := .Get 2 }}
+{{ .Scratch.Set "image" ($original.Fit $options) }}
+{{ $image := .Scratch.Get "image" }}
+<img
+	src="{{ $image.RelPermalink }}"
+	width="{{ $image.Width }}"
+	height="{{ $image.Height }}"
+	{{ with $style }}
+	style="{{ $style }}"
+	{{ end }}
+>

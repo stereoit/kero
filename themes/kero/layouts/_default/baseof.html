@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ .Page.Language | default "en" }}">
+  <head>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta content="{{ delimit .Keywords ", " }}" name="keywords">
+    <meta content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Site.Params.description }}{{ if eq $isHomePage false }} - {{ .Description }}{{ end }}" property="og:description">
+    <title>{{ block "title" . }}
+       {{ .Site.Title }}
+     {{ end }}</title>
+    <link rel="stylesheet" href="{{ "css/styleguide.css" | relURL }}">
+    <link href="/font-awesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+
+    <!-- Eventival specific icons -->
+    <link rel="stylesheet" href="{{ "/fontello/css/ev.css" | relURL }}">
+
+    <!-- Algolia's InstantSearch.js -->
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@1/dist/instantsearch-preact.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.4/dist/instantsearch.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.7.4/dist/instantsearch-theme-algolia.min.css">
+
+    <!-- FlatPickr - Date and time picker - date and time picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Let's breath life into this page! -->
+    <script async src="{{ "js/vendor.js" | relURL}}"></script>
+    <script async src="{{ "js/styleguide.js" | relURL}}"></script>
+  </head>
+  <body class="styleguide">
+    <header>
+      {{ partial "header.html" . }}
+    </header>
+
+    {{ partial "menu.html" . }}
+    {{ block "main" . }}
+    <main>
+      {{ partial "breadcrumb.html" . }}
+    </main>
+    {{ end }}
+
+
+    <footer>
+      <div class="container">
+        {{ block "footer" . }}
+        <span>
+          &copy; 2018 - Eventival s.r.o
+        </span>
+        <a href="eventival.com">Eventival.com</a>
+        {{ end }}
+      </div>
+    </footer>
+  </body>
+</html>
