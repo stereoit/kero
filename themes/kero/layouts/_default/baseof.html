@@ -8,36 +8,82 @@
        {{ .Site.Title }}
      {{ end }}</title>
      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-     <link href="/css/bootstrap.css" rel="stylesheet">
+     <link rel="stylesheet" href="{{ "css/site.css" | relURL }}">
+     <script src="{{ "js/bootstrap.min.js" | relURL }}"></script>
+     <script src="{{ "js/jquery.min.js" | relURL }}"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous">
 
-
-    <link rel="stylesheet" href="{{ "css/kero.css" | relURL }}">
-
-    <script async src="{{ "js/styleguide.js" | relURL}}"></script>
   </head>
-  <body class="styleguide">
-    <header>
-        <div class="container">
-          <h1 class="display-4">Nášivky nové generace</h1>
+  <body>
+    <header class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 offset-sm-6 text-light">
+          <h1>Nášivky nové generace</h1> 
           <p class="lead">Strojní výšivky dle Vašich požadavků .</p>
-          <a href="https://themes.gohugo.io/theme/hugo-sodium-theme/#contact" class="btn btn-outline-light">Get In Touch</a>
+          <a href="#contact" class="btn btn-outline-light">Více</a>
         </div>
+      </div>
     </header>
 
     <main>
-      <section class="container">
-        <h1>O nášivkách</h1>
+      <section class="benefits">
+        <div class="container">
+          <h1 class="text-light">O nášivkách</h1>
+        </div>
+        <div class="row justify-content-md-center">
+        
+          <div class="col-12 col-lg-3 col-md-6 col-sm-12 features text-white">
+            <div class="icon mb-4 text-center">
+              <svg class="svg-inline--fa fa-bell fa-w-14" aria-hidden="true" data-prefix="fa" data-icon="bell" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512" data-fa-i2svg="">
+                <path fill="currentColor" d="M433.884 366.059C411.634 343.809 384 316.118 384 208c0-79.394-57.831-145.269-133.663-157.83A31.845 31.845 0 0 0 256 32c0-17.673-14.327-32-32-32s-32 14.327-32 32c0 6.75 2.095 13.008 5.663 18.17C121.831 62.731 64 128.606 64 208c0 108.118-27.643 135.809-49.893 158.059C-16.042 396.208 5.325 448 48.048 448H160c0 35.346 28.654 64 64 64s64-28.654 64-64h111.943c42.638 0 64.151-51.731 33.941-81.941zM224 472a8 8 0 0 1 0 16c-22.056 0-40-17.944-40-40h16c0 13.234 10.766 24 24 24z"></path>
+              </svg>
+              <!-- <i class="fa fa-bell"></i> -->
+            </div>
+            <h4 class="h4">Feature 1</h4>
+            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elementum tristique arcu, in tristique sapien commodo
+              sodales. Vivamus condimentum quam mi.</p>
+          </div>
+        
+          <div class="col-12 col-lg-3 col-md-6 col-sm-12 features text-white">
+            <div class="icon mb-4 text-center">
+              <svg class="svg-inline--fa fa-rocket fa-w-16" aria-hidden="true" data-prefix="fa" data-icon="rocket" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512" data-fa-i2svg="">
+                <path fill="currentColor" d="M505.1 19.1C503.8 13 499 8.2 492.9 6.9 460.7 0 435.5 0 410.4 0 307.2 0 245.3 55.2 199.1 128H94.9c-18.2 0-34.8 10.3-42.9 26.5L2.6 253.3c-8 16 3.6 34.7 21.5 34.7h95.1c-5.9 12.8-11.9 25.5-18 37.7-3.1 6.2-1.9 13.6 3 18.5l63.6 63.6c4.9 4.9 12.3 6.1 18.5 3 12.2-6.1 24.9-12 37.7-17.9V488c0 17.8 18.8 29.4 34.7 21.5l98.7-49.4c16.3-8.1 26.5-24.8 26.5-42.9V312.8c72.6-46.3 128-108.4 128-211.1.1-25.2.1-50.4-6.8-82.6zM400 160c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48z"></path>
+              </svg>
+              <!-- <i class="fa fa-rocket"></i> -->
+            </div>
+            <h4 class="h4">Feature 2</h4>
+            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam efficitur, est sed vestibulum viverra, mi dui semper erat,
+              non placerat dolor est</p>
+          </div>
+        
+          <div class="col-12 col-lg-3 col-md-6 col-sm-12 features text-white">
+            <div class="icon mb-4 text-center">
+              <svg class="svg-inline--fa fa-clock fa-w-16" aria-hidden="true" data-prefix="fa" data-icon="clock" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512" data-fa-i2svg="">
+                <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm57.1 350.1L224.9 294c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h48c6.6 0 12 5.4 12 12v137.7l63.5 46.2c5.4 3.9 6.5 11.4 2.6 16.8l-28.2 38.8c-3.9 5.3-11.4 6.5-16.8 2.6z"></path>
+              </svg>
+              <!-- <i class="fa fa-clock"></i> -->
+            </div>
+            <h4 class="h4">Feature 3</h4>
+            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in ornare orci, et posuere velit. Suspendisse tempor
+              blandit augue, non. </p>
+          </div>
+        
+        </div>
       </section>
-      <section class="container">
-        <h1>Napište nám</h1>
-        <form class="contact-us" accept-charset="UTF-8" action="https://formkeep.com/f/XXXXXXXXXXXX" method="POST">
-          <textarea name="comment" form="usrform">Enter text here...</textarea>
-          <br>
-          <input type="email" name="email" placeholder="Váš Email pro odpoved">
-          <br>
-          <input type="hidden" name="utf8" value="✓">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+      <section class="contact">
+         <div class="container">
+           <h1>Napište nám</h1>
+          <form class="col-md-7" method="POST" action="https://formspree.io/smol.robert@gmail.com">
+            <textarea name="message" placeholder="Zanechte nám zprávu"></textarea>
+            <input type="email" name="email" placeholder="Váš email">
+            <button type="submit" class="btn btn-primary">Odeslat</button>
+          </form>
+         </div>
       </section>
     </main>
 
@@ -46,11 +92,10 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-md-3">
-            <img src="/img/kero_logo.png" alt="">
-            Kero Logo
+          <div class="col-md-4">
+            <img class="logo" src="/img/kero_logo.png" alt="">
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <h3>Adresa</h3>
             <ul>
               <li>Kero s.r.o.</li>
@@ -60,15 +105,23 @@
               <li>DIČ: 25726455</li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <span class="avatar avatar--circle avatar--borderless" data-tooltip="Men">
-              <img src="https://randomuser.me/api/portraits/men/27.jpg">
-            </span>
-            <span>
-              &copy; 2018 - Kero s.r.o
-            </span>
-            <a href="kero.cz">kero.cz</a>
+          <div class="col-md-4">
+            <h3>Jednatel</h3>
+            <div class="mira">
+              <div class="avatar avatar--circle avatar--borderless" data-tooltip="Men">
+                <img src="https://randomuser.me/api/portraits/men/27.jpg">
+              </div>
+              <ul>
+                <li>Miroslav Vomela</li>
+                <li><a href="mailto:miroslav.vomela@kero.cz">miroslav.vomela@kero.cz</a></li>
+                <li>tel: <a href="tel:+420608370480">608 370 480</a></li>
+              </ul>
+            </div>
           </div>
+        </div>
+        <div class="copyright">
+          Copyright 2018
+          <a href="kero.cz">kero.cz</a>
         </div>
       </div>
     </footer>
