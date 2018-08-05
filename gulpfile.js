@@ -16,3 +16,7 @@ gulp.task('js', function () {
         .pipe(gulp.dest("static/js"))
         .pipe(browserSync.stream());
 });
+
+gulp.task('watch:css', function () {
+  gulp.watch('scss/*.scss', ['sass']);
+});

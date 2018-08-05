@@ -5,9 +5,14 @@ body {
 header {
   padding: 2em;
    min-height: 60vh;
-   background: url(/img/header_bg.jpg) no-repeat center;
+   background: url(/img/header_bg_2-min) no-repeat center;
    background-size: cover;
    color: #FFF;
+}
+
+.hero {
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 50%;
 }
 
 footer {
@@ -17,12 +22,12 @@ footer {
   color: #FFF;
 }
 
-footer .logo { 
+footer .logo {
   width: 100px;
   margin-top: 1.5em;
 }
 
-footer a { 
+footer a {
   color: #FFF;
   text-decoration: underline;
 }
